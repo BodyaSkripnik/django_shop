@@ -1,4 +1,3 @@
-from itertools import product
 from django.urls import reverse_lazy
 from django.views.generic import CreateView
 from django.contrib.auth.views import LoginView
@@ -12,9 +11,7 @@ def homepage(request):
     categorys = Category.objects.all()
     return render(request, 'blog/homepage.html',{'categorys':categorys})
 def get_categorys(request,category_id):#принимаем category_id с urls.py
-    print(category_id)
     products = Product.objects.filter(available = True,category = category_id)#фильтруем по активным и по category_id
-    print(product)
     return render(request, 'blog/get_categorys.html',{'products':products})
 
     
