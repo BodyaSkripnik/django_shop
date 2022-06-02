@@ -1,0 +1,7 @@
+ {% extends 'blog/homepage.html'%}   <!-- наследуем шаблон -->
+    
+    {% block title %}<!-- та часть шаблона которая будет отличатся от наследуемого шаблона  -->
+        {% for prod in products %}
+        <div>{{prod}}</div>
+        {% endfor %}
+    {% endblock %}
